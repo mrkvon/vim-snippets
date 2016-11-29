@@ -1,0 +1,77 @@
+snippet get
+get:
+  tags:
+    - ${1}
+  summary: ${2:$1}
+  description: ${3}
+  ${4:security:
+    - basicAuth: []
+  }responses:  
+    200:
+      description: ${5}
+      ${6:schema:
+        $ref: '${7}'}
+$0
+endsnippet
+
+snippet delete
+delete:
+  tags:
+    - ${1}s
+  description: ${4:delete $1 by $3}
+  ${2:security:
+    - basicAuth: []
+  }parameters:
+    - in: path
+      name: ${3:$1Id}
+      description: ${5:The $3 of the $1 we want to DELETE}
+      required: true
+      type: string
+  responses:
+    204:
+      description: ${6:No Content}
+    403:
+      description: ${7:Not Authorized}
+    404:
+      description: ${8:Not Found}
+$0
+endsnippet
+
+snippet apijson
+${1}:
+  type: object
+  required: 
+    - data
+  properties:
+    data:
+      type: object
+      required:
+        ${2:- id
+        }- type
+        - attributes
+      properties:
+        ${3:id:
+          type: string
+          description: ${90:id of the $4}
+        }type:
+          type: string
+          enum:
+            - ${4}s
+        attributes:
+          type: object
+          ${80:required:
+            - ${81:$5}
+          }properties:
+            ${5}:
+              type: string
+              description: ${6:$5 of the $4}
+            ${7}
+$0
+endsnippet
+
+snippet prop
+${1}:
+  type: ${2:string}
+  description: ${3:$1}
+$0
+endsnippet

@@ -1,0 +1,37 @@
+snippet describe
+describe(${2:'}${1}$2, function () {
+  ${3}
+});$0
+endsnippet
+
+snippet	context
+context(${2:'}${1}$2, function () {
+  ${3}
+});$0
+endsnippet
+
+snippet it
+it(${2:'}${1}$2);$0
+endsnippet
+
+snippet itf
+it(${2:'}${1}$2, function (${3}) {
+  ${4}
+});$0
+endsnippet
+
+snippet before
+before(function (${1:done}) {${2}});$0
+endsnippet
+
+snippet beforeEach
+beforeEach(function (${1:done}) {${2}});$0
+endsnippet
+
+snippet after
+after(function (${1:done}) {${2}});$0
+endsnippet
+
+snippet afterEach
+afterEach(function (${1:done}) {${2}});$0
+endsnippet
