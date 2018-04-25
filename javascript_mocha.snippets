@@ -1,13 +1,13 @@
 snippet describe
-describe(${2:'}${1}$2, function () {
-  ${3}
-});$0
+describe(${2:'}${1}$2, () => {
+  $0
+});
 endsnippet
 
 snippet	context
-context(${2:'}${1}$2, function () {
-  ${3}
-});$0
+context(${2:'}${1}$2, () => {
+  $0
+});
 endsnippet
 
 snippet it
@@ -15,23 +15,23 @@ it(${2:'}${1}$2);$0
 endsnippet
 
 snippet itf
-it(${2:'}${1}$2, function (${3}) {
-  ${4}
-});$0
+it(${2:'}${1}$2, async () => {
+  $0
+});
 endsnippet
 
 snippet before
-before(function (${1:done}) {${2}});$0
+before((${1}) => {$0});
 endsnippet
 
 snippet beforeEach
-beforeEach(function (${1:done}) {${2}});$0
+beforeEach((${1}) => {$0});
 endsnippet
 
 snippet after
-after(function (${1:done}) {${2}});$0
+after((${1}) => {$0});
 endsnippet
 
 snippet afterEach
-afterEach(function (${1:done}) {${2}});$0
+afterEach((${1}) => {$0});
 endsnippet

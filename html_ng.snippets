@@ -1,0 +1,21 @@
+snippet ngform
+<form (ngSubmit)="${1:onSubmit()}" [formGroup]="${2:someForm}">
+  <fieldset [disabled]="${4:false}">
+    ${5}
+    <button type="submit" [disabled]="!$2.valid">${3:Submit}</button>
+  </fieldset>
+</form>$0
+endsnippet
+
+snippet nginput
+<label for="$1">${5:$1}</label>
+<input
+  type="${2:text}"
+  placeholder="${3:$1}"
+  formControlName="${1}" ${4:required}
+>$0
+endsnippet
+
+snippet nga
+<a routerLink="${1:/path}">${2:text}</a>$0
+endsnippet
